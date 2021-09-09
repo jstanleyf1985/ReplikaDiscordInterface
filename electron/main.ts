@@ -15,7 +15,8 @@ function createWindow () {
     },
     frame: false,
     resizable: true,
-    hasShadow: true
+    hasShadow: true,
+    icon: path.join(__dirname, 'icons', 'win', '1024x1024.png')
   })
 
   //mainWindow.webContents.openDevTools()
