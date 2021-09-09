@@ -1,6 +1,7 @@
 # Output directories
 dist
 packages
+tests
 
 # Logs
 logs
