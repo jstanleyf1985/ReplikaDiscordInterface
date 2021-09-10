@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/JStanleyF1985)
+Jonathan Stanley - [@JStanleyF1985](https://twitter.com/JStanleyF1985)
 
 Project Link: [https://github.com/jstanleyf1985/ReplikaDiscordInterface](https://github.com/jstanleyf1985/ReplikaDiscordInterface)
 
