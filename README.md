@@ -94,7 +94,7 @@
 
 ### Follow written instructions
 * Download and install the pre-requisite package called nodejs (current version 16.9.1 or higher) at <a href="https://nodejs.org/en/download/current/">the nodejs website</a>. It will be the "Windows Installer (.msi) 64 bit if you're unsure which one to pick. Previous versions have not been tested.
-* Download the ReplikaDiscordInterface installer package <a href="https://nodejs.org/en/download/current/">HERE</a> .
+* Download the ReplikaDiscordInterface installer package <a href="https://drive.google.com/file/d/1cdxgkmoZvYGu3Fz6IeFa2TGtejTyjcpx/view?usp=sharing">HERE</a> .
 * Install ReplikaDiscordInterface program. It will automatically extract to C:\Program Files (x86)\ReplikaDiscordInterface . You can move the ReplikaDiscordInterface folder as you wish (Its portable).
 * Create a Discord bot for your server.
 <ul>
