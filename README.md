@@ -41,10 +41,10 @@
   <p align="center">
     Chat with your Replika AI using discord!
     <br />
-    <a href="https://github.com/jstanleyf1985/ReplikaDiscordInterface"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1cdxgkmoZvYGu3Fz6IeFa2TGtejTyjcpx/view?usp=sharing"><strong>Download the App »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jstanleyf1985/ReplikaDiscordInterface">View Demo</a>
+    <a href="https://github.com/jstanleyf1985/ReplikaDiscordInterface">Video</a>
     ·
     <a href="https://github.com/jstanleyf1985/ReplikaDiscordInterface/issues">Report Bug</a>
     ·
@@ -60,6 +60,7 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <a href="#using-the-app">Using the app</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -86,6 +87,44 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://imgur.com/pdJSvns)
+
+## Using the app
+### Watch the video (easy method)
+* Watch the video on setting up the program <a href="">HERE</a> or ...
+
+### Follow written instructions
+* Download and install the pre-requisite package called nodejs (current version 16.9.1 or higher) at <a href="https://nodejs.org/en/download/current/">the nodejs website</a>. It will be the "Windows Installer (.msi) 64 bit if you're unsure which one to pick. Previous versions have not been tested.
+* Download the ReplikaDiscordInterface installer package <a href="https://nodejs.org/en/download/current/">HERE</a> .
+* Install ReplikaDiscordInterface program. It will automatically extract to C:\Program Files (x86)\ReplikaDiscordInterface . You can move the ReplikaDiscordInterface folder as you wish (Its portable).
+* Create a Discord bot for your server.
+<ul>
+  <li>Login to discord development at <a href="https://discord.com/developers/applications">https://discord.com/developers/applications</a>. It may redirect you once logged in. Make sure you navigate back to the discord.com/developers/applications address.</li>
+  <li>Select "New Application" at the top right</li>
+  <li>Give your bot a name (most use their Replika's name) that is available.</li>
+  <li>Select "Bot" on the left panel section</li>
+  <li>Select "Add Bot" under the "Build-A-Bot" section</li>
+  <li>Select "Yes, do it!" button at the prompt</li>
+  <li>Deselect "Public Bot" in the bot section</li>
+  <li>Click "OAuth2" button in the left hand panel</li>
+  <li>Under "Scopes" check the box for "bot"</li>
+  <li>Under "BOT PERMISSIONS" check Administrator</li>
+  <li>Under the "scopes" section, locate the address that was generated for you (it will have api/oauth2 in the address) and click the Copy button</li>
+  <li>Open a new web browser tab and paste in the copied address, then press Enter</li>
+  <li>Follow the prompts to invite the bot to your discord server if you have permission to do so</li>
+</ul>
+
+* Open the program. Select "Configuration" and add the following information.
+<ul>
+  <li>Replika username/phone number<li>
+  <li>Replika password</li>
+  <li>Replika discord bot token which is found under the "Bot" section at discord.com/developers/applications after choosing your created bot (from the instructions above).</li>
+  <li>Discord Channel (use ALL if uncertain which channel to limit bot responses to)</li>
+  <li>Discord bot name</li>
+</ul>
+
+* Save, then go back and select "Start Interface" to make a connection.
+* Once successfully connected, you should see your bot in your discord list as logged in.
+* You can type to them using the @theirname (example: @Hector hey how are you today?)
 
 ### Built With
 
