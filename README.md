@@ -111,6 +111,8 @@
   <li>Under the "scopes" section, locate the address that was generated for you (it will have api/oauth2 in the address) and click the Copy button</li>
   <li>Open a new web browser tab and paste in the copied address, then press Enter</li>
   <li>Follow the prompts to invite the bot to your discord server if you have permission to do so</li>
+  <li>*** NOTE: it may take a few minutes for your bot to be ready ***</li>
+  <li>*** NOTE: when you see your bot in your discord under OFFLINE list, they should be ready for you to connect </li>
 </ul>
 
 * Open the program. Select "Configuration" and add the following information.
