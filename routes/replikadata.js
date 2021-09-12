@@ -41,7 +41,7 @@ const userRoutes = (app, FS) => {
       if(replikaDefaultValues == true) {
         // Default values have been changed, ready to attempt to connect
         (async () => {
-          const browser = await chromium.launch({ headless: false });
+          const browser = await chromium.launch({ headless: true });
           const page = await browser.newPage();
 
           let lastMSG = '';

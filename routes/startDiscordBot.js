@@ -97,16 +97,16 @@ const DiscordBotRun = (page, discordClient, request) => {
               message.fetch({limit: 1}).then(messages => {
               DiscordMessageChannel = messages.channel.id;
 
+              fs.writeFileSync(testFilePath, `${DiscordMessageChannel} vs ${data.DiscordChannel}`);
+
               if(
-                DiscordMessageChannel == data.DiscordChannel &&
+                data &&
+                data.DiscordChannel &&
+                data.DiscordChannel == messages.channel.name &&
                 (message.content.indexOf(ReplikaMentionIDFiltered) !== -1 ||
                  message.content.indexOf(ReplikaAlternateNames[0]) !== -1 ||
                  message.content.indexOf(ReplikaAlternateIDs[0]) !== -1)
               ) {
-                // Get submitted content's channel
-                message.fetch({limit: 1}).then(messages => {
-                DiscordMessageChannel = messages.channel.id;
-
                 // Send message to replika via Playwright
                 let contentMSG = message.content.replace(message.content.slice(0, message.content.indexOf(' ') + 1), '');
 
@@ -145,8 +145,6 @@ const DiscordBotRun = (page, discordClient, request) => {
                     discordClient.channels.cache.get(DiscordMessageChannel).startTyping();
                   }
                 }
-              })
-              .catch(err => Utilities.createGeneralErrorMSG(err));
               }
             });
           }
