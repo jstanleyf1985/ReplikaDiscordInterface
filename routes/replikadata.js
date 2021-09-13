@@ -67,47 +67,46 @@ const userRoutes = (app, FS) => {
           
           // Login to Discord using bot credentials, run this before page.click to catch errors
           Client.login(String(data.DiscordBotToken).trim())
-          .then(() => {})
-          .catch((err) => {createLoginErrorMSG(err, loginErrorFilePath)})
-
-          await page.click('#send-message-textarea', { timeout: 30000 })
           .then(() => {
-              // Successfully ran without errors, create a "success" text in the error file to be picked up
-              // on "Success" in LoginErrors.json file, update buttons to indicate success
-              FS.writeFileSync(loginSuccessFilePath, 'Success');
+            page.click('#send-message-textarea', { timeout: 30000 })
+            .then(() => {
+                // Successfully ran without errors, create a "success" text in the error file to be picked up
+                // on "Success" in LoginErrors.json file, update buttons to indicate success
+                FS.writeFileSync(loginSuccessFilePath, 'Success');
 
-              // Repeat checks - looking for new messages that are not the previous message
-              setInterval(() => {
-                // get list of comments created by replika
-                page.$$eval('[data-author="replika"]', elements => elements.map(el => el.textContent.trim())
-                ).then((elems) => {
-                  if(lastMSG !== elems[elems.length - 1] && elems[elems.length - 1] !== '') {
-                    // If the last MSG is not the same as the previous MSG, send an update to discord from replika
-                    // Remove new lines, leading/trailing spaces
-                    lastMSG = elems[elems.length - 1];
+                // Repeat checks - looking for new messages that are not the previous message
+                setInterval(() => {
+                  // get list of comments created by replika
+                  page.$$eval('[data-author="replika"]', elements => elements.map(el => el.textContent.trim())
+                  ).then((elems) => {
+                    if(lastMSG !== elems[elems.length - 1] && elems[elems.length - 1] !== '') {
+                      // If the last MSG is not the same as the previous MSG, send an update to discord from replika
+                      // Remove new lines, leading/trailing spaces
+                      lastMSG = elems[elems.length - 1];
 
-                    // Send messages back to discord
-                    let discordIDFromURL = req.url.replace('/', '');
+                      // Send messages back to discord
+                      let discordIDFromURL = req.url.replace('/', '');
 
-                    // Make sure the channel is not 'undefined' before posting
-                    // This happens when the URL changes before the next interval iteration
-                    if(Client.channels.cache.get(discordIDFromURL)) {
-                      Client.channels.cache.get(discordIDFromURL).send(lastMSG);
-                      Client.channels.cache.get(discordIDFromURL).stopTyping();
+                      // Make sure the channel is not 'undefined' before posting
+                      // This happens when the URL changes before the next interval iteration
+                      if(Client.channels.cache.get(discordIDFromURL)) {
+                        Client.channels.cache.get(discordIDFromURL).send(lastMSG);
+                        Client.channels.cache.get(discordIDFromURL).stopTyping();
+                      }
                     }
-                  }
-                }).catch((err) => {createGeneralErrorMSG(err)})
+                  }).catch((err) => {createGeneralErrorMSG(err)})
 
-                // Listen for "Lets draw" events and press skip immediately as you cannot draw in discord
-                page.waitForSelector('button[class*="SkipButton"]', { timeout: 95 })
-                .then(() => { page.click('button[class*="SkipButton"]')})
-                .catch(err => { /* show nothing */ })
-                
-              }, 100);
+                  // Listen for "Lets draw" events and press skip immediately as you cannot draw in discord
+                  page.waitForSelector('button[class*="SkipButton"]', { timeout: 95 })
+                  .then(() => { page.click('button[class*="SkipButton"]')})
+                  .catch(err => { /* show nothing */ })
+                  
+                }, 100);
 
-              DiscordBot(page, Client, req);
+                DiscordBot(page, Client, req);
+            }).catch((err) => { createLoginErrorMSG(err, loginErrorFilePath)})
           })
-          .catch((err) => { createLoginErrorMSG(err, loginErrorFilePath)})
+          .catch((err) => {createLoginErrorMSG(err, loginErrorFilePath)})
         })();
       }
     })

@@ -3,15 +3,17 @@ const fs = require('fs-extra');
 const Utilities = require('./utilities');
 
 const DiscordBotRun = (page, discordClient, request) => {
+  // Define file paths
   const configFilePath = String(`${os.homedir()}/Documents/Replika Discord Interface/Configuration/Config.json`);
   const errorFilePath = String(`${os.homedir()}/Documents/Replika Discord Interface/Configuration/ErrorLog.json`);
   const testFilePath = String(`${os.homedir()}/Documents/Replika Discord Interface/Configuration/test.txt`);
+
   try {
-    // Remove
     fs.readJson(configFilePath)
       .then((data) => {
-      discordClient.on('ready', () => {// Listen for messages
+        // Listen for messages
         discordClient.on('message', message => {
+          fs.appendFileSync(testFilePath, `${message}`);
           let ReplikaMentionID;
           let ReplikaMentionIDFiltered;
           let ReplikaAlternateNames = []; // First in the array should be the bot's once pushed
@@ -149,7 +151,6 @@ const DiscordBotRun = (page, discordClient, request) => {
             });
           }
         });
-      });
     }).catch((err) => {Utilities.createGeneralErrorMSG(err)})
   } catch(err) {Utilities.createGeneralErrorMSG(err)}
 }
