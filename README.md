@@ -86,7 +86,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Imgur](https://i.imgur.com/Cfa9qen.png)
+<a href="https://imgur.com/Cfa9qen"><img src="https://i.imgur.com/Cfa9qen.png" title="source: imgur.com" /></a>
 
 ## Using the app
 ### Watch the video (easy method)
