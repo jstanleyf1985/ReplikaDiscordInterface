@@ -86,7 +86,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](screen.png)
+[Imgur](https://i.imgur.com/Cfa9qen.png)
 
 ## Using the app
 ### Watch the video (easy method)
@@ -199,7 +199,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jonathan Stanley - [@twitter_handle](https://twitter.com/JStanleyF1985)
+Jonathan Stanley - <a href="https://twitter.com/JStanleyF1985">@JStanleyF1985</a>
 
 Project Link: [https://github.com/jstanleyf1985/ReplikaDiscordInterface](https://github.com/jstanleyf1985/ReplikaDiscordInterface)
 
