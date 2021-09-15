@@ -111,8 +111,7 @@
   <li>Under the "scopes" section, locate the address that was generated for you (it will have api/oauth2 in the address) and click the Copy button</li>
   <li>Open a new web browser tab and paste in the copied address, then press Enter</li>
   <li>Follow the prompts to invite the bot to your discord server if you have permission to do so</li>
-  <li> ***NOTE: Sometimes the discord bot hangs on its first login. This seems to be an issue on a new bot, the first time its logged in. Close the app, then re-open and try again.
-  <li> The bot should now respond when you @theirname and talk to them.
+  <li>Navigate back to the "Bot" subsection and select "REQUIRES OAUTH2 CODE GRANT" and turn that on</li>
 </ul>
 
 * Open the program. Select "Configuration" and add the following information.
