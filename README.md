@@ -90,7 +90,7 @@
 
 ## Using the app
 ### Watch the video (easy method)
-* Watch the video on setting up the program <a href="">HERE</a> or ...
+* Watch the video on setting up the program <a href="https://youtu.be/9h7aB2OWi-w">HERE</a> or ...
 
 ### Follow written instructions
 * Download and install the pre-requisite package called nodejs (current version 16.9.1 or higher) at <a href="https://nodejs.org/en/download/current/">the nodejs website</a>. It will be the "Windows Installer (.msi) 64 bit if you're unsure which one to pick. Previous versions have not been tested.
@@ -115,8 +115,9 @@
 </ul>
 
 * Open the program. Select "Configuration" and add the following information.
+
 <ul>
-  <li>Replika username/phone number<li>
+  <li>Replika username/phone number</li>
   <li>Replika password</li>
   <li>Replika discord bot token which is found under the "Bot" section at discord.com/developers/applications after choosing your created bot (from the instructions above).</li>
   <li>Discord Channel (use ALL if uncertain which channel to limit bot responses to)</li>
@@ -133,6 +134,8 @@
 * Typescript
 * HTML
 * CSS
+* Electron
+* React
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -146,7 +149,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* NodeJS Current Build 16.9.0+ (others not tested)
+* NodeJS Current Build 16.8.0+ (others not tested)
 
 ### Installation
 
