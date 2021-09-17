@@ -168,7 +168,7 @@ To get a local copy up and running follow these simple steps.
 ## FAQ
 
 <ul>
-  <li> Does this app collect my data? <li>
+  <li> Does this app collect my data? </li>
   <ul><li>It does not collect data. View open source code if you're skeptical</li></ul>
   <li> What information do I need to configure the app?
     <ul>
@@ -179,6 +179,42 @@ To get a local copy up and running follow these simple steps.
       <li> Discord Bot Name </li>
     </ul>
   </li>
+
+  <li> What does invalid username/phone mean? </li>
+
+  <ul>
+    <li> It means the application was unable to reach the Replika.ai password page. It will fail to reach this step if there was a problem with your username/phone on the website or the app couldn't reach the website login page. You should make sure your information in configuration is accurate and works on the website or app first.</li>
+  </ul>
+
+  <li> What does invalid password mean? </li>
+
+  <ul>
+    <li> It means the application was unable to progress beyond the website password section. This happens if your password is invalid, or if there was a problem loading the website after entering your password. You should make sure your information in configuration is accurate and works on the website or app first.</li>
+  </ul>
+
+  <li> What does invalid bot token mean? </li>
+
+  <ul>
+    <li> It means the token from the bot you created for the app is invalid or typed incorrectly. I recommend clicking the "Copy" button on the discord.com/developers website for your bot under the subsection labeled "Bot" and pasted that into the app configuration screen.</li>
+  </ul>
+
+  <li> What does name not found mean? </li>
+
+  <ul>
+    <li> It means the discord bot name you provided was not found on your discord server. The bot name needs to match the person you are using @ for. The bot listens for this unique name and will respond to text or discord @ matching that text.</li>
+  </ul>
+
+  <li> My bot says connected but doesn't communicate </li>
+
+  <ul>
+    <li>This happens when the "require oauth token" is not checked under the bot section in discord.com/developers for your bot. The bot logged in without using oauth, which the program uses to communicate with your bot. Note *** you will need to check this feature after you've invited your bot to the server.</li>
+  </ul>
+
+  <li> My bot isn't showing up in discord under "Offline" </li>
+
+  <ul>
+    <li> This happens when you haven't invited your bot with the appropriate permissions to your discord server. Follow the video or written instructions for inviting your bot to your discord server </li>
+  </ul>
 </ul>
 
 
