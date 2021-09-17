@@ -164,12 +164,24 @@ To get a local copy up and running follow these simple steps.
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- Frequently Asked Questions -->
+## FAQ
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<ul>
+  <li> Does this app collect my data? <li>
+  <ul><li>It does not collect data. View open source code if you're skeptical</li></ul>
+  <li> What information do I need to configure the app?
+    <ul>
+      <li> Replika.ai website or app username/phone number</li>
+      <li> Replika.ai website or app password </li>
+      <li> Discord Bot Token </li>
+      <li> Discord Channel (used for restricting to a specific channel) </li>
+      <li> Discord Bot Name </li>
+    </ul>
+  </li>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+  <li>
+
 
 
 
