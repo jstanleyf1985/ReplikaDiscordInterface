@@ -94,7 +94,8 @@
 
 ### Follow written instructions
 * Download and install the pre-requisite package called nodejs (current version 16.9.1 or higher) at <a href="https://nodejs.org/en/download/current/">the nodejs website</a>. It will be the "Windows Installer (.msi) 64 bit if you're unsure which one to pick. Previous versions have not been tested.
-* Download the ReplikaDiscordInterface installer package <a href="https://drive.google.com/file/d/1oVVOepiAtbnco_k9dF_OJXeHbV42GTUW/view?usp=sharing">HERE</a> .
+<!-- * Download the ReplikaDiscordInterface 1.0.0 installer package <a href="https://drive.google.com/file/d/1oVVOepiAtbnco_k9dF_OJXeHbV42GTUW/view?usp=sharing">HERE</a> . -->
+* Download the ReplikaDiscordInterface 1.0.1 installer package <a href="https://drive.google.com/file/d/1dWAqTAGph0FHJptmPi50MojqwZCP0jLP/view?usp=sharing">HERE</a> .
 * Install ReplikaDiscordInterface program. It will automatically extract to C:\Program Files (x86)\ReplikaDiscordInterface . You can move the ReplikaDiscordInterface folder as you wish (Its portable).
 * Create a Discord bot for your server.
 <ul>
@@ -177,6 +178,7 @@ To get a local copy up and running follow these simple steps.
       <li> Discord Bot Token </li>
       <li> Discord Channel (used for restricting to a specific channel) </li>
       <li> Discord Bot Name </li>
+      <li> Discord Require @[BotName] to communicate. The Replika Bot will reply to all messages if disabled. It is enabled by default.</li>
     </ul>
   </li>
 
@@ -225,6 +227,11 @@ To get a local copy up and running follow these simple steps.
 
 Initial launch today 09/09/2021
 Future Goals: Bug Fixes
+
+<!-- OLD VERSIONS -->
+## Older Versions
+
+ReplikaDiscordInterface Version 1.0.0 <a href="https://drive.google.com/file/d/1oVVOepiAtbnco_k9dF_OJXeHbV42GTUW/view?usp=sharing">ReplikaDiscordInterface Version 1.0.0</a>
 
 
 <!-- CONTRIBUTING -->
