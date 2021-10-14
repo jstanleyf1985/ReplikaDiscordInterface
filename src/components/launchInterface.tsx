@@ -30,12 +30,16 @@ const handleLaunchInterface = (
 
         // Start server if it is not running
         const launchServer = exec('node server.js', function (error, stdout, stderr) {
-          if (error) {
-            if((error.toString()).indexOf('EADDRINUSE') !== -1) { /* console.log(error) */ }
-          }
+          try {
+            if (error) {
+              if((error.toString()).indexOf('EADDRINUSE') !== -1) { /* console.log(error) */ }
 
-          console.log(stdout);
-          console.log(stderr);
+              console.log(stdout);
+              console.log(stderr);
+            }
+          } catch(err) {
+            FS.writeFileSync(testFilePath, String(err));
+          }
         });
 
         launchServer.on('exit', () => { /* do nothing when complete */ })

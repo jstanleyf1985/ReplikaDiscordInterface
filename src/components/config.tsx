@@ -7,7 +7,7 @@ import UseSound from 'use-sound'
 import Styled, { keyframes } from 'styled-components'
 import GlobalStyle from '../styles/globalStyles.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers, faKey, faIdCard, faTv, faRobot } from '@fortawesome/free-solid-svg-icons'
+import { faUsers, faKey, faIdCard, faTv, faRobot, faAt } from '@fortawesome/free-solid-svg-icons'
 
 // Sounds
 import SelectA from '../sounds/SelectA.mp3';
@@ -21,6 +21,7 @@ const Config = (props: { updateActiveComponent: (arg0: string) => void }):JSX.El
   const [RToken, setRToken] = useState('Discord bot token')
   const [RChannel, setRChannel] = useState('Discord channel')
   const [RName, setRName] = useState('Discord bot name')
+  const [RRequireAt, setRRequireAt] = useState('enabled')
   const [ConfigFileExists, setConfigFileExists] = useState(false)
   const [ConfigFileContents] = useState({})
   const [ConfigBTNDisabled, setConfigBTNDisabled] = useState(false)
@@ -38,6 +39,7 @@ const Config = (props: { updateActiveComponent: (arg0: string) => void }):JSX.El
       setRToken,
       setRChannel,
       setRName,
+      setRRequireAt,
       documentsPath)
   }, [])
 
@@ -128,11 +130,25 @@ const Config = (props: { updateActiveComponent: (arg0: string) => void }):JSX.El
           </ConfigInput>
         </ConfigFormGroup>
 
+        <ConfigFormGroup>
+          <ConfigLabel>
+          <FSpan onClick={() => {play();createAlert('Discord @ Required', 'This field is for the <b>Requiring whether or not the @botname is needed for replies</b> . If set to "Enabled" (default) you will be required to say @botname for the bot to respond to your text. If "Disabled" the bot will reply to every message created in the set channel(s).')}}>
+              <FontAwesomeIcon icon={faAt}></FontAwesomeIcon>
+            </FSpan>
+          </ConfigLabel>
+
+          <ConfigAtButton
+            backgroundColor={RRequireAt}
+            onClick={(e) => {e.preventDefault(); RRequireAt == "Disabled" ? setRRequireAt("Enabled") : setRRequireAt("Disabled")}}>
+            {RRequireAt == "Disabled" ? "Disabled" : "Enabled"}
+          </ConfigAtButton>
+        </ConfigFormGroup>
+
         <ConfigFormGroup
             onClick={(e: SyntheticEvent) => {
               e.preventDefault();
               setConfigBTNDisabled(true);
-              saveConfigFile(RUsername, RPassword, RToken, RChannel, RName, documentsPath, props.updateActiveComponent, setConfigBTNDisabled)
+              saveConfigFile(RUsername, RPassword, RToken, RChannel, RName, RRequireAt, documentsPath, props.updateActiveComponent, setConfigBTNDisabled)
             }}>
           <ConfigButton>Save Configuration</ConfigButton>
         </ConfigFormGroup>
@@ -169,6 +185,7 @@ const readConfigFile = (
   ImportToken: React.Dispatch<React.SetStateAction<string>>,
   ImportChannel: React.Dispatch<React.SetStateAction<string>>,
   ImportName: React.Dispatch<React.SetStateAction<string>>,
+  ImportRRequireAt: React.Dispatch<React.SetStateAction<string>>,
   path: string) => {
   if (ConfigState) {
     FS.readJson(path)
@@ -178,6 +195,7 @@ const readConfigFile = (
         ImportToken(DOMPurify.sanitize(String(packageObj.DiscordBotToken)))
         ImportChannel(DOMPurify.sanitize(String(packageObj.DiscordChannel)))
         ImportName(DOMPurify.sanitize(String(packageObj.DiscordBotName)))
+        ImportRRequireAt(DOMPurify.sanitize(String(packageObj.RRequireAt)))
       })
       .catch(err => {
         createAlert('Alert', 'No config exists. Defaults will be used.')
@@ -211,7 +229,8 @@ const createDefaultConfig = (path: string) => {
     ReplikaPassword: 'Password',
     DiscordBotToken: 'Discord bot token',
     DiscordChannel: 'Discord channel',
-    DiscordBotName: 'Discord bot name'
+    DiscordBotName: 'Discord bot name',
+    RRequireAt: 'Enabled'
   })
     .then(() => {
       // Do nothing
@@ -227,6 +246,7 @@ const saveConfigFile = (
     RToken: string,
     RChannel: string,
     RName: string,
+    RRequireAt: string,
     path: string,
     activePage: (arg0: string) => void,
     setConfigBTNDisabled: React.Dispatch<React.SetStateAction<boolean>>) => {
@@ -235,7 +255,8 @@ const saveConfigFile = (
     ReplikaPassword: RPassword,
     DiscordBotToken: RToken,
     DiscordChannel: RChannel,
-    DiscordBotName: RName
+    DiscordBotName: RName,
+    RRequireAt: RRequireAt
   })
     .then(() => {
       successfullySavedAlert('Notification', 'Successfully Saved Config!', setConfigBTNDisabled, activePage)
@@ -353,6 +374,36 @@ const ConfigInput = Styled.input`
   };
   @media (min-width: 576px) and (max-width: 767px) {
     width: 70%;
+  };
+`
+const ConfigAtButton = Styled.button`
+  font-family: 'RobotoCondensedRegular', sans-serif;
+  color: #f1f1f1;
+  height: 100%;
+  width: 80%;
+  border-radius: 5px;
+  border: 2px solid #666;
+  text-align: center;
+  -webkit-app-region: no-drag;
+  background-color: ${(props: {backgroundColor: string}) => props.backgroundColor === 'Disabled' ? '#600' : '#060'} !important;
+  font-size: 1.2rem;
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props: {backgroundColor: string}) => props.backgroundColor === 'Disabled' ? '#600' : '#060'} !important;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    box-shadow: 0px 0px 20px rgba(150, 150, 150, 0.5);
+  };
+  &:active {
+    background-color: #070;
+  };
+  @media (min-width: 1px) and (max-width: 575px) {
+    width: 95%;
+    margin: auto 0 auto 2%;
+  };
+  @media (min-width: 576px) and (max-width: 767px) {
+    width: 95%;
+    margin: auto 0 auto 30%;
   };
 `
 
