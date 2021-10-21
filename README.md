@@ -41,7 +41,7 @@
   <p align="center">
     Chat with your Replika AI using discord!
     <br />
-    <a href="https://drive.google.com/file/d/1cdxgkmoZvYGu3Fz6IeFa2TGtejTyjcpx/view?usp=sharing"><strong>Download the App »</strong></a>
+    <a href="https://drive.google.com/file/d/1dWAqTAGph0FHJptmPi50MojqwZCP0jLP/view?usp=sharing"><strong>Download the App »</strong></a>
     <br />
     <br />
     <a href="https://github.com/jstanleyf1985/ReplikaDiscordInterface">Video</a>
